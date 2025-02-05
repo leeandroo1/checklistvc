@@ -1,5 +1,5 @@
 // URL del script de Google Apps Script
-const scriptUrl = 'https://script.google.com/macros/s/AKfycbxub8jnT4eMDYQnzzDmfNpneQuopU3VrG7Wdk3DjEu7nvaBSZL1kXI3PBqI7VWtT4YR/exec';
+const scriptUrl = 'https://script.google.com/macros/s/AKfycbxgo4cxXNq50JXF0fZ3ryPPq3RAocCvfOig9HTTV2blrMGLMlGhOwHPYCgPgdnS4qwI/exec';
 
 // Captura el parámetro id_sala de la URL
 const urlParams = new URLSearchParams(window.location.search);
