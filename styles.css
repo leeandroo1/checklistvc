@@ -1,7 +1,12 @@
-/* Estilos personalizados */
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -10,28 +15,43 @@ body {
 
 .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: none;
 }
 
 .card-body {
     padding: 2rem;
 }
 
-/* Estilos para el contenido principal */
-main {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    margin-bottom: 100px; /* Ajusta este valor según la altura del footer */
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #333;
 }
 
-/* Estilos para el footer */
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.card-text strong {
+    color: #333;
+}
+
+/* Iconos */
+.bi {
+    margin-right: 0.5rem;
+    color: #4CAF50;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 1rem;
-    position: fixed; /* Fija el footer en la parte inferior */
-    left: 0;
-    bottom: 0;
     width: 100%;
+    margin-top: auto;
 }

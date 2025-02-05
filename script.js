@@ -1,5 +1,5 @@
 // URL del script de Google Apps Script
-const scriptUrl = 'https://script.google.com/macros/s/AKfycbxgo4cxXNq50JXF0fZ3ryPPq3RAocCvfOig9HTTV2blrMGLMlGhOwHPYCgPgdnS4qwI/exec';
+const scriptUrl = 'https://script.google.com/macros/s/AKfycbyCdTycKr-zRtIgicwCrh2Cog7cQM-jy9dtiptZuaP0sTe_rZvVAbOVCNS3vnvnXwc3/exec';
 
 // Captura el parámetro id_sala de la URL
 const urlParams = new URLSearchParams(window.location.search);
@@ -15,7 +15,7 @@ if (idSala) {
         .then(data => {
             if (data.error) {
                 salaInfo.innerHTML = `
-                    <div class="col-md-6 mx-auto">
+                    <div class="col-md-8 mx-auto">
                         <div class="card mb-3">
                             <div class="card-body">
                                 <p class="card-text text-center">${data.error}</p>
@@ -23,17 +23,32 @@ if (idSala) {
                         </div>
                     </div>`;
             } else {
-                // Muestra la información de la sala en una tarjeta
+                // Muestra la información de la sala en una tarjeta con iconos
                 salaInfo.innerHTML = `
-                    <div class="col-md-6 mx-auto">
+                    <div class="col-md-8 mx-auto">
                         <div class="card mb-3">
                             <div class="card-body">
-                                <h5 class="card-title">Información de la Sala ${data[1]}</h5>
-                                <p class="card-text"><strong>Fecha de Revisión:</strong> ${data[2]}</p>
-                                <p class="card-text"><strong>Responsable:</strong> ${data[3]}</p>
-                                <p class="card-text"><strong>Estado de Conectividad:</strong> ${data[5]}</p>
-                                <p class="card-text"><strong>Estado de Conectividad Tablet:</strong> ${data[6]}</p>
-                                <p class="card-text"><strong>Observaciones:</strong> ${data[12]}</p>
+                                <h5 class="card-title">Información de la Sala ${data.nombre_sala}</h5>
+                                <p class="card-text">
+                                    <i class="bi bi-calendar"></i>
+                                    <strong>Fecha de Revisión:</strong> ${data.fecha_revision}
+                                </p>
+                                <p class="card-text">
+                                    <i class="bi bi-person"></i>
+                                    <strong>Responsable:</strong> ${data.responsable}
+                                </p>
+                                <p class="card-text">
+                                    <i class="bi bi-wifi"></i>
+                                    <strong>Estado de Conectividad:</strong> ${data.estado_conectividad}
+                                </p>
+                                <p class="card-text">
+                                    <i class="bi bi-tablet"></i>
+                                    <strong>Estado de Conectividad Tablet:</strong> ${data.estado_conectividad_tablet}
+                                </p>
+                                <p class="card-text">
+                                    <i class="bi bi-chat"></i>
+                                    <strong>Observaciones:</strong> ${data.observaciones}
+                                </p>
                             </div>
                         </div>
                     </div>`;
@@ -41,7 +56,7 @@ if (idSala) {
         })
         .catch(error => {
             salaInfo.innerHTML = `
-                <div class="col-md-6 mx-auto">
+                <div class="col-md-8 mx-auto">
                     <div class="card mb-3">
                         <div class="card-body">
                             <p class="card-text text-center">Error al cargar la información. Inténtelo de nuevo más tarde.</p>
@@ -52,7 +67,7 @@ if (idSala) {
         });
 } else {
     salaInfo.innerHTML = `
-        <div class="col-md-6 mx-auto">
+        <div class="col-md-8 mx-auto">
             <div class="card mb-3">
                 <div class="card-body">
                     <p class="card-text text-center">Error: No se proporcionó un ID de sala.</p>
