@@ -16,6 +16,22 @@ body {
     padding: 2rem;
 }
 
+/* Estilos para el contenido principal */
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 100px; /* Ajusta este valor según la altura del footer */
+}
+
+/* Estilos para el footer */
 footer {
-    margin-top: 2rem;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed; /* Fija el footer en la parte inferior */
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
