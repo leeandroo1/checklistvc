@@ -28,7 +28,7 @@ if (idSala) {
                     <div class="col-md-8 mx-auto">
                         <div class="card mb-3">
                             <div class="card-body">
-                                <h5 class="card-title">Información de la Sala ${data.nombre_sala}</h5>
+                                <h5 class="card-title">Sala: ${data.nombre_sala}</h5>
                                 <p class="card-text">
                                     <i class="bi bi-calendar"></i>
                                     <strong>Fecha de Revisión:</strong> ${data.fecha_revision}
